@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "firstpage":"/pages/firstpage/firstpage",
+    "order": "/pages/order/order",
+    "me": "/pages/me/me"
+  }
+  
+}

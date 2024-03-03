@@ -1,0 +1,18 @@
+<van-row>
+    <view style="padding-top: 20rpx; margin-left: 20rpx; margin-top: 30rpx;width: 650rpx;background-color:#ffffff;border-radius: 30rpx;">
+        <view style="font-size: 45rpx;font-weight:700">请输入管理员密码</view>
+    </view>
+</van-row>
+<view class='box'>
+    <view class='row' bindtap='inputFocus'>
+        <view class="{{index == active ? 'active' : '' }}" wx:for="{{Length}}" wx:key="index">
+            <input type="number" value="{{entryList.length>=index+1?entryList[index]:''}}" disabled></input>
+        </view>
+    </view>
+    <input type="number" class='entry' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="inputValue"></input>
+</view>
+<view>
+    <button style="margin-top: 50rpx;width: 500rpx;" type="primary" bindtap="enter">确认</button>
+</view>
+<van-dialog id="van-dialog" />
+<van-notify id="van-notify" />

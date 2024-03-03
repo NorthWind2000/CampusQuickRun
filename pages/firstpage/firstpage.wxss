@@ -1,0 +1,10 @@
+/* pages/firstpage/firstpage.wxss */
+page {
+    background-color: #ECECEC;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}

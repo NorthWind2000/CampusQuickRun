@@ -1,0 +1,38 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+    <scroll-view scroll-y="true" style="height:90vh">
+        <van-tab title="全部订单">
+            <view wx:for="{{ orderlist }}" wx:key="index" style="padding: 20rpx; margin-top: 20rpx; margin-left: 55rpx; background-color: #ffffff;width: 600rpx; border-radius: 20rpx;">
+                <view style="color: brown; margin-bottom: 10rpx; font-weight: 700; font-size: 35rpx;">{{item.status}}</view>
+                <view style="font-size: 30rpx;">宿舍号：{{item.building}}|取件码：{{item.expresscode}}</view>
+                <view style="font-size: 30rpx;">快递站：{{item.kuaidi}}</view>
+                <view style="font-size: 30rpx;">收货人：{{item.name}}|手机号：{{item.tel}}</view>
+                <view style="font-size: 30rpx;">完成时间：{{item.finishtime}}</view>
+            </view>
+        </van-tab>
+        <van-tab title="待接单">
+            <view wx:for="{{ waitinglist }}" wx:key="index" style="padding: 20rpx; margin-top: 20rpx; margin-left: 55rpx; background-color: #ffffff;width: 600rpx; border-radius: 20rpx;">
+                <view style="color: brown; margin-bottom: 10rpx; font-weight: 700; font-size: 35rpx;">{{item.status}}</view>
+                <view style="font-size: 30rpx;">宿舍号：{{item.building}}|取件码：{{item.expresscode}}</view>
+                <view style="font-size: 30rpx;">快递站：{{item.kuaidi}}</view>
+                <view style="font-size: 30rpx;">收货人：{{item.name}}|手机号：{{item.tel}}</view>
+            </view>
+        </van-tab>
+        <van-tab title="待送达">
+            <view wx:for="{{ tobedelivered }}" wx:key="index" style="padding: 20rpx; margin-top: 20rpx; margin-left: 55rpx; background-color: #ffffff;width: 600rpx; border-radius: 20rpx;">
+                <view style="color: brown; margin-bottom: 10rpx; font-weight: 700; font-size: 35rpx;">{{item.status}}</view>
+                <view style="font-size: 30rpx;">宿舍号：{{item.building}}|取件码：{{item.expresscode}}</view>
+                <view style="font-size: 30rpx;">快递站：{{item.kuaidi}}</view>
+                <view style="font-size: 30rpx;">收货人：{{item.name}}|手机号：{{item.tel}}</view>
+            </view>
+        </van-tab>
+        <van-tab title="已完成">
+            <view wx:for="{{ finishlist }}" wx:key="index" style="padding: 20rpx; margin-top: 20rpx; margin-left: 55rpx; background-color: #ffffff;width: 600rpx; border-radius: 20rpx;">
+                <view style="color: brown;margin-bottom: 10rpx; font-weight: 700; font-size: 35rpx;">{{item.status}}</view>
+                <view style="font-size: 30rpx;">宿舍号：{{item.building}}|取件码：{{item.expresscode}}</view>
+                <view style="font-size: 30rpx;">快递站：{{item.kuaidi}}</view>
+                <view style="font-size: 30rpx;">收货人：{{item.name}}|手机号：{{item.tel}}</view>
+                <view style="font-size: 30rpx;">完成时间：{{item.finishtime}}</view>
+            </view>
+        </van-tab>
+    </scroll-view>
+</van-tabs>

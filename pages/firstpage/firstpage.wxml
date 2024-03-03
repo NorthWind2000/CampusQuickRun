@@ -1,0 +1,50 @@
+<!--pages/firstpage/firstpage.wxml-->
+<scroll-view scroll-y="true" style="height: 100vh">
+  <van-row>
+    <van-image width="100%" height="12rem" fill="widthFix" src="/image/title.png" />
+  </van-row>
+  <van-row>
+    <view style="padding-top: 20rpx; margin-left: 50rpx; margin-top: 30rpx;width: 650rpx;background-color:#ffffff;border-radius: 30rpx;">
+      <view style="font-size: 45rpx;margin-left: 30rpx;font-weight:700">收件人</view>
+      <view style="padding-left: 30rpx;padding-right: 30rpx;">
+        <van-divider borderColor="#1989fa" />
+      </view>
+      <view style="padding-left: 25rpx;padding-bottom: 20rpx;">
+        <van-cell-group>
+          <van-field label="姓名" model:value="{{ name }}" placeholder="请输入姓名" border="{{ false }}" />
+          <van-field label="电话" model:value="{{ tel }}" placeholder="请输入电话" border="{{ false }}" />
+          <van-field label="取件码" model:value="{{ expresscode }}" placeholder="请输入取件码" border="{{ false }}" />
+          <van-field label="宿舍楼号" model:value="{{ building }}" placeholder="请选择宿舍楼号" border="{{ false }}" />
+          <view class="section">
+            <picker mode="time" value="{{time}}" start="09:00" end="17:00" bindchange="bindTimeChange">
+              <view class="picker">
+                <van-field label="配送时间" value="{{ time }}" readonly="true" placeholder="请选择配送时间" border="{{ false }}"/>
+              </view>
+            </picker>
+          </view>
+        </van-cell-group>
+      </view>
+    </view>
+    <view style="padding-top: 20rpx; margin-left: 50rpx; margin-top: 30rpx;width: 650rpx;background-color:#ffffff;border-radius: 30rpx;">
+      <view style="font-size: 45rpx;margin-left: 30rpx;font-weight:700">快递站</view>
+      <view style="padding-left: 30rpx;padding-right: 30rpx;">
+        <van-divider borderColor="#1989fa" />
+      </view>
+      <view style="padding-left: 25rpx;padding-bottom: 30rpx;" bindtap="onOpen">
+        当前选择快递站：{{kuaidi}}
+      </view>
+    </view>
+  </van-row>
+  <van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelect" />
+  <button style="margin-top: 50rpx;width: 500rpx;" type="primary" bindtap="submit">提交</button>
+</scroll-view>
+<van-dialog
+  use-slot
+  title="长按保存收款码"
+  show="{{ payshow }}"
+  bind:close="onPayClose"
+>
+<view style="display: flex;width: 100%; flex-direction:row;justify-content: center;">
+    <image src="../../image/pay.jpg" mode="widthFix" 	show-menu-by-longpress></image>
+</view>
+</van-dialog>

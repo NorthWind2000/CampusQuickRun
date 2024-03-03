@@ -1,0 +1,15 @@
+<view style="padding-top: 20rpx; margin-left: 50rpx; margin-top: 30rpx; height: 590rpx;width: 650rpx;background-color:#ffffff;border-radius: 30rpx;">
+    <view style="font-size: 45rpx;margin-left: 30rpx;font-weight:700">收件人</view>
+    <view>
+        <van-divider borderColor="#1989fa" />
+    </view>
+    <view style="padding-left: 25rpx;">
+        <van-cell-group>
+            <van-field label="姓名" model:value="{{ name }}" placeholder="请输入姓名" border="{{ false }}" />
+            <van-field label="电话" model:value="{{ tel }}" placeholder="请输入电话" border="{{ false }}" />
+            <van-field label="宿舍楼号" model:value="{{ building }}" placeholder="请选择宿舍楼号" border="{{ false }}" />
+        </van-cell-group>
+    </view>
+    <button style="margin-top: 50rpx;width: 500rpx;" type="primary" bindtap="saveinfo">保存</button>
+</view>
+<van-notify id="van-notify" />

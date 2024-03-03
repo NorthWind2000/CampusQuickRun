@@ -1,0 +1,3 @@
+<view class="UCenter-bg">
+    <button bindtap="login"> 登录 </button>
+</view>

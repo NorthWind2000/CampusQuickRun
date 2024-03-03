@@ -1,0 +1,8 @@
+<view>
+  <view class='main-wrapper'>
+  <firstpage wx:if='{{active == 0}}' onShow="{{tabbar[0].selected}}"></firstpage>
+  <order wx:if='{{active == 1}}' onShow="{{tabbar[1].selected}}"></order>
+  <me wx:if='{{active == 2}}' onShow="{{tabbar[2].selected}}"></me>
+</view>
+<van-notify id="van-notify" />
+</view>
